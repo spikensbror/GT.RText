@@ -63,6 +63,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddPageDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPageDialog.Designer.cs">
+      <DependentUpon>AddPageDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListViewColumnSorter.cs" />
     <Compile Include="ListViewExtensions.cs" />
     <Compile Include="Main.cs">
@@ -79,6 +85,9 @@
     <Compile Include="RowEditor.Designer.cs">
       <DependentUpon>RowEditor.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddPageDialog.resx">
+      <DependentUpon>AddPageDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>

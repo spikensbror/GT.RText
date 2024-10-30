@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-
 using GT.Shared;
 
 namespace GT.RText.Core
@@ -10,8 +9,8 @@ namespace GT.RText.Core
         public string Name { get; set; }
 
         // We need to have them ordered, game uses binary searching
-        public SortedDictionary<string, RTextPairUnit> PairUnits { get; set; }
-            = new SortedDictionary<string, RTextPairUnit>(AlphaNumStringComparer.Default);
+        public SortedDictionary<string, RTextPairUnit> PairUnits { get; set; } =
+            new SortedDictionary<string, RTextPairUnit>(AlphaNumStringComparer.Default);
 
         public void EditRow(int id, string label, string data)
         {
@@ -28,14 +27,11 @@ namespace GT.RText.Core
             return index;
         }
 
-        public void DeleteRow(string label)
-            => PairUnits.Remove(label);
+        public void DeleteRow(string label) => PairUnits.Remove(label);
 
-        public int GetLastId()
-            => PairUnits.Max(p => p.Value.ID);
+        public int GetLastId() => PairUnits.Count > 0 ? PairUnits.Max(p => p.Value.ID) : 0;
 
-        public bool PairExists(string label)
-            => PairUnits.ContainsKey(label);
+        public bool PairExists(string label) => PairUnits.ContainsKey(label);
 
         public void AddPairs(Dictionary<string, string> pairs)
         {
